@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Borrowing Form</title>
+        <script type="text/javascript">
+            function validateForm() {
+                var name = document.forms["borrowForm"]["txtname"].value;
+                var regNumber = document.forms["borrowForm"]["registration"].value;
+
+                if (name == "" || regNumber == "") {
+                    alert("Name and Registration number must be filled out.");
+                    return false;
+                }
+                return true;
+            }
+
+            function showMessage() {
+                alert("Thank you for submitting the form!");
+            }
+        </script>
+    </head>
+    <body bgcolor="blue" text="black">
+        <h1 style="background-color: red; border-style: solid;" align="center">Students Library Materials Borrowing Form</h1>
+        <hr>
+        <p>All <b>students are advised</b> to fill the form before borrowing the library materials.</p>
+        
+        <h1 align="center">Student Library Materials Borrowing</h1>
+
+        <form name="borrowForm" method="post" action="" enctype="" onsubmit="return validateForm()">
+           Name: <input type="text" name="txtname" size="40" maxlength="25"><br>
+
+           Registration number: <input type="text" name="registration" size="40" maxlength="16"><br>
+
+           Material taken:
+           <input type="checkbox" name="material" value="mg">Magazine
+           <input type="checkbox" name="material" value="jn" checked>Journal
+           <input type="checkbox" name="material" value="CD">CD-Rom
+           <input type="checkbox" name="material" value="video">Video tapes<br>
+
+           Gender: 
+           <input type="radio" name="gender" value="m">Male
+           <input type="radio" name="gender" value="f" checked>Female
+           <input type="radio" name="gender" value="t">Transgender<br>
+            
+            Courses materials available: 
+            <select size="4" multiple>
+                <option value="se">Software Engineering</option>
+                <option value="cs">Computer Science</option>
+                <option value="ct" selected>Computer Technology</option>
+                <option value="it">Information Technology</option>
+                <option value="as">Actuarial Science</option>
+                <option value="ap">Applied Physics</option>
+                <option value="ac">Analytical Chemistry</option>
+            </select>  
+            <br>
+
+            <textarea rows="10" cols="60">Comments here:</textarea>
+            <br>
+
+            <input type="submit" value="Send Data" onclick="showMessage()">
+            <input type="reset" value="Clear Form">
+        </form>
+    </body>
+</html>
